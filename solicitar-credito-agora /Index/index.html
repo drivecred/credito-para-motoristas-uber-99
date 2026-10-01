@@ -60,7 +60,6 @@
       overflow: hidden;
     }
 
-    /* Imagem da motorista posicionada como mostra no modelo original */
     .hero-bg-img {
       position: absolute;
       right: -20px;
@@ -73,7 +72,6 @@
       opacity: 0.9;
     }
 
-    /* Degradê para garantir legibilidade dos textos no lado esquerdo */
     .hero-overlay {
       position: absolute;
       top: 0;
@@ -142,7 +140,6 @@
       max-width: 55%;
     }
 
-    /* Badges Uber e 99 */
     .app-badges {
       display: flex;
       gap: 8px;
@@ -154,7 +151,6 @@
       border-radius: 6px;
     }
 
-    /* Tag Amarela inclinada/estilizada no canto inferior direito */
     .hero-tag-yellow {
       position: absolute;
       bottom: 12px;
@@ -177,7 +173,6 @@
       padding: 0 14px 20px;
     }
 
-    /* Card Limite Disponível */
     .card-limite {
       background: var(--white);
       border-radius: 16px;
@@ -233,7 +228,6 @@
       font-weight: 700;
     }
 
-    /* Grid de Benefícios estilo Modelo (Card Único Aberto) */
     .benefits-wrapper {
       background: var(--white);
       border-radius: 16px;
@@ -284,7 +278,6 @@
       color: var(--text-gray);
     }
 
-    /* Card Simulador */
     .card-simulador {
       background: var(--dark-card);
       border-radius: 16px;
@@ -387,7 +380,6 @@
       margin: 8px 0;
     }
 
-    /* Por que Escolher - 3 Colunas Lado a Lado */
     .card-why {
       background: var(--white);
       border-radius: 16px;
@@ -432,7 +424,6 @@
       line-height: 1.2;
     }
 
-    /* Navigation Bar Fixo */
     .bottom-navbar {
       position: fixed;
       bottom: 0;
@@ -487,15 +478,15 @@
 
   <div class="app-wrapper">
 
-    <!-- Header Hero com Imagem Amostrada à Direita -->
+    <!-- Header Hero com Imagem vindo da pasta img/ -->
     <div class="hero-container">
-      <img src="img_logo.png" alt="Motorista" class="hero-bg-img">
+      <img src="img/img_logo.png" alt="Motorista" class="hero-bg-img">
       <div class="hero-overlay"></div>
 
       <div class="hero-content-wrap">
         <header class="header-nav">
           <div class="logo-brand">
-            <img src="ic_volante.png" alt="Volante" class="icon-img" width="32" height="32">
+            <img src="img/ic_volante.png" alt="Volante" class="icon-img" width="32" height="32">
             <div class="logo-text">Drive<span>Crédito</span></div>
           </div>
         </header>
@@ -508,13 +499,13 @@
         <p class="hero-desc">Uber e 99POP são a sua fonte de renda. Agora, podem ser a chave para o seu próximo passo.</p>
         
         <div class="app-badges">
-          <img src="ic_uber.png" alt="Uber" class="badge-btn-img">
-          <img src="ic_pop99.png" alt="99POP" class="badge-btn-img">
+          <img src="img/ic_uber.png" alt="Uber" class="badge-btn-img">
+          <img src="img/ic_pop99.png" alt="99POP" class="badge-btn-img">
         </div>
       </div>
 
       <div class="hero-tag-yellow">
-        <img src="ic_escudo.png" alt="Seguro" class="icon-img" width="16" height="16">
+        <img src="img/ic_escudo.png" alt="Seguro" class="icon-img" width="16" height="16">
         Processo 100% digital, sem burocracia.
       </div>
     </div>
@@ -526,7 +517,7 @@
       <div class="card-limite">
         <div class="limite-flex">
           <div class="icon-wallet">
-            <img src="ic_carteiras.png" alt="Carteira" class="icon-img" width="30" height="30">
+            <img src="img/ic_carteiras.png" alt="Carteira" class="icon-img" width="30" height="30">
           </div>
           <div class="limite-info">
             <div class="lbl">Seu limite disponível</div>
@@ -542,7 +533,7 @@
         <div class="benefits-grid">
           <div class="benefit-card">
             <div class="b-icon">
-              <img src="ic_raio.png" alt="Rápido" class="icon-img" width="20" height="20">
+              <img src="img/ic_raio.png" alt="Rápido" class="icon-img" width="20" height="20">
             </div>
             <h4>Liberação Rápida</h4>
             <p>Em até 24h</p>
@@ -550,7 +541,7 @@
 
           <div class="benefit-card">
             <div class="b-icon">
-              <img src="ic_contrato.png" alt="Digital" class="icon-img" width="20" height="20">
+              <img src="img/ic_contrato.png" alt="Digital" class="icon-img" width="20" height="20">
             </div>
             <h4>100% Digital</h4>
             <p>Sem papelada</p>
@@ -558,7 +549,7 @@
 
           <div class="benefit-card">
             <div class="b-icon">
-              <img src="ic_escudo.png" alt="Confiável" class="icon-img" width="20" height="20">
+              <img src="img/ic_escudo.png" alt="Confiável" class="icon-img" width="20" height="20">
             </div>
             <h4>Seguro e Confiável</h4>
             <p>Seus dados protegidos</p>
@@ -566,7 +557,7 @@
 
           <div class="benefit-card">
             <div class="b-icon">
-              <img src="ic_calendario.png" alt="Prazos" class="icon-img" width="20" height="20">
+              <img src="img/ic_calendario.png" alt="Prazos" class="icon-img" width="20" height="20">
             </div>
             <h4>Prazos Flexíveis</h4>
             <p>Do seu jeito</p>
@@ -578,7 +569,7 @@
       <div class="card-simulador">
         <div class="sim-head">
           <div class="sim-icon">
-            <img src="ic_calc.png" alt="Calculadora" class="icon-img" width="22" height="22">
+            <img src="img/ic_calc.png" alt="Calculadora" class="icon-img" width="22" height="22">
           </div>
           <div class="sim-title">
             <h3>Simule seu empréstimo</h3>
@@ -610,7 +601,7 @@
           </div>
 
           <button type="submit" class="btn-action">
-            <img src="ic_calc.png" alt="Simular" class="icon-img" width="18" height="18">
+            <img src="img/ic_calc.png" alt="Simular" class="icon-img" width="18" height="18">
             Simular agora →
           </button>
         </form>
@@ -629,19 +620,19 @@
         <div class="why-grid">
           <div class="why-item">
             <div class="why-check">
-              <img src="ic_check.png" alt="Check" class="icon-img" width="12" height="12">
+              <img src="img/ic_check.png" alt="Check" class="icon-img" width="12" height="12">
             </div>
             <p>Atende motoristas de Uber e 99POP</p>
           </div>
           <div class="why-item">
             <div class="why-check">
-              <img src="ic_check.png" alt="Check" class="icon-img" width="12" height="12">
+              <img src="img/ic_check.png" alt="Check" class="icon-img" width="12" height="12">
             </div>
             <p>Taxas justas e transparentes</p>
           </div>
           <div class="why-item">
             <div class="why-check">
-              <img src="ic_check.png" alt="Check" class="icon-img" width="12" height="12">
+              <img src="img/ic_check.png" alt="Check" class="icon-img" width="12" height="12">
             </div>
             <p>Suporte especializado no seu WhatsApp</p>
           </div>
@@ -653,29 +644,29 @@
     <!-- Navigation Inferior -->
     <nav class="bottom-navbar">
       <a href="#home" class="nav-btn active">
-        <img src="ic_volante.png" alt="Início" class="icon-img" width="20" height="20">
+        <img src="img/ic_volante.png" alt="Início" class="icon-img" width="20" height="20">
         <span>Início</span>
       </a>
 
       <a href="#contratos" class="nav-btn">
-        <img src="ic_contrato.png" alt="Contratos" class="icon-img" width="20" height="20">
+        <img src="img/ic_contrato.png" alt="Contratos" class="icon-img" width="20" height="20">
         <span>Meus Contratos</span>
       </a>
 
       <a href="#solicitar" class="nav-btn center-btn">
         <div class="center-icon-bg">
-          <img src="ic_emprestimo.png" alt="Solicitar" class="icon-img" width="26" height="26">
+          <img src="img/ic_emprestimo.png" alt="Solicitar" class="icon-img" width="26" height="26">
         </div>
         <span>Solicitar Crédito</span>
       </a>
 
       <a href="#suporte" class="nav-btn">
-        <img src="ic_suporte.png" alt="Suporte" class="icon-img" width="20" height="20">
+        <img src="img/ic_suporte.png" alt="Suporte" class="icon-img" width="20" height="20">
         <span>Suporte</span>
       </a>
 
       <a href="#perfil" class="nav-btn">
-        <img src="ic_perfil.png" alt="Perfil" class="icon-img" width="20" height="20">
+        <img src="img/ic_perfil.png" alt="Perfil" class="icon-img" width="20" height="20">
         <span>Perfil</span>
       </a>
     </nav>
