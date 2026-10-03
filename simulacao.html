@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>DriveCrédito - Simulação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --yellow-primary: #FFCB05;
+      --yellow-button: #FFCB05;
+      --dark-bg: #0F172A;
+      --dark-card: #151D2A;
+      --dark-input: #1E293B;
+      --white: #FFFFFF;
+      --text-dark: #0F172A;
+      --text-gray: #64748B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: #E2E8F0;
+      color: var(--text-dark);
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .app-wrapper {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    /* CARD DO SIMULADOR */
+    .card-simulador {
+      background: var(--dark-card);
+      border-radius: 20px;
+      padding: 24px 20px;
+      color: var(--white);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .sim-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .sim-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--yellow-primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sim-icon img {
+      width: 22px;
+      height: 22px;
+    }
+
+    .sim-title h3 {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .sim-title p {
+      font-size: 12px;
+      color: #94A3B8;
+    }
+
+    .field-box {
+      margin-bottom: 16px;
+    }
+
+    .field-box label {
+      display: block;
+      font-size: 12px;
+      color: #94A3B8;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .select-ctrl {
+      width: 100%;
+      padding: 14px;
+      background-color: var(--dark-input);
+      border: 1px solid #334155;
+      border-radius: 10px;
+      color: var(--white);
+      font-size: 15px;
+      font-weight: 700;
+      outline: none;
+    }
+
+    /* RESUMO */
+    .sim-summary {
+      background: #1E293B;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+    }
+
+    .sim-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #CBD5E1;
+      margin-bottom: 8px;
+    }
+
+    .sim-summary-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .sim-summary-row strong {
+      color: var(--yellow-primary);
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    /* BOTAO */
+    .btn-action {
+      width: 100%;
+      padding: 15px;
+      background-color: var(--yellow-button);
+      border: none;
+      border-radius: 12px;
+      color: var(--dark-bg);
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* MENSAGEM PROTOCOLO */
+    .protocol-box {
+      display: none;
+      background: #059669;
+      color: white;
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .protocol-code {
+      font-size: 22px;
+      font-weight: 800;
+      background: rgba(0, 0, 0, 0.2);
+      padding: 8px 14px;
+      border-radius: 8px;
+      display: inline-block;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="app-wrapper">
+    <div class="card-simulador">
+      
+      <div class="sim-head">
+        <div class="sim-icon">
+          <img src="img/ic_calc.png" alt="Calculadora">
+        </div>
+        <div class="sim-title">
+          <h3>Simule seu empréstimo</h3>
+          <p>Escolha o valor e veja o pagamento diário.</p>
+        </div>
+      </div>
+
+      <form id="simularForm">
+        <div class="field-box">
+          <label for="valorSelect">Valor desejado</label>
+          <select class="select-ctrl" id="valorSelect">
+            <option value="500">R$ 500,00</option>
+            <option value="1000">R$ 1.000,00</option>
+            <option value="1500">R$ 1.500,00</option>
+            <option value="2000">R$ 2.000,00</option>
+            <option value="2500" selected>R$ 2.500,00 (Máximo)</option>
+          </select>
+        </div>
+
+        <!-- RESUMO DA SIMULACAO -->
+        <div class="sim-summary">
+          <div class="sim-summary-row">
+            <span>Prazo de pagamento:</span>
+            <span>26 parcelas diárias</span>
+          </div>
+          <div class="sim-summary-row">
+            <span>Valor diário:</span>
+            <strong id="valorDiarioTxt">R$ 134,62 / dia</strong>
+          </div>
+          <div class="sim-summary-row">
+            <span>Total a pagar:</span>
+            <span id="valorTotalTxt" style="color: #94A3B8;">R$ 3.500,00</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-action">
+          <img src="img/ic_calc.png" alt="Simular" width="18" height="18">
+          Solicitar agora →
+        </button>
+      </form>
+
+      <div id="protocoloBox" class="protocol-box">
+        <h4>Solicitação Recebida com Sucesso!</h4>
+        <p style="font-size: 11px; margin-top: 4px;">Número do seu protocolo de atendimento:</p>
+        <div class="protocol-code" id="numeroProtocolo">DC-000000</div>
+        <p style="font-size: 11px;">Entraremos em contato via WhatsApp em até 24h.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const valorSelect = document.getElementById('valorSelect');
+    const valorDiarioTxt = document.getElementById('valorDiarioTxt');
+    const valorTotalTxt = document.getElementById('valorTotalTxt');
+
+    function calcularSimulacao() {
+      const valorEmp = parseFloat(valorSelect.value);
+      const taxaJuros = 1.40; // 40% de juros
+      const dias = 26;
+
+      const totalPagar = valorEmp * taxaJuros;
+      const valorDiario = totalPagar / dias;
+
+      valorDiarioTxt.innerText = `R$ ${valorDiario.toFixed(2).replace('.', ',')} / dia`;
+      valorTotalTxt.innerText = `R$ ${totalPagar.toFixed(2).replace('.', ',')}`;
+    }
+
+    valorSelect.addEventListener('change', calcularSimulacao);
+    calcularSimulacao();
+
+    document.getElementById('simularForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const anoAtual = new Date().getFullYear();
+      const numAleatorio = Math.floor(100000 + Math.random() * 900000);
+      const protocoloFormatado = `DC-${anoAtual}-${numAleatorio}`;
+
+      document.getElementById('numeroProtocolo').innerText = protocoloFormatado;
+      document.getElementById('protocoloBox').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
